@@ -289,6 +289,12 @@
   \color{ecolor}\bfseries}{}{
   0.5em}{}
 
+\RequirePackage{amssymb}
+\renewenvironment{proof}{
+\noindent\textbf{\color{ecolor}\proofname\;} \songti}{
+    \hfill $\square$}
+
+
 % caption settings 
 \RequirePackage{caption} 
 \captionsetup{

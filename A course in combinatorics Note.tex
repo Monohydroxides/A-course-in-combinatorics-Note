@@ -15,7 +15,13 @@
 
 \newpage
 
-\section{图}
+\tableofcontents
+
+\newpage
+
+\setcounter{page}{1}
+
+\section{图} \label{sec: graph}
 
 本章主要对图的基本性质进行了介绍，如平面图、重边、自环、有向性、同构、完全图、正则图、生成子图、图的连通性、回路、多边形等。
 
@@ -37,7 +43,37 @@
     一个无孤立顶点的有限图 $G$ 是欧拉图，当且仅当 $G$ 是连通图且每一个点都是偶顶点。
 \end{theorem}
 
-在书中，定理\ref{thm: Eulerian graph}采用了一种类似于逐步扩展的方法，给出了一个构造性的证明，且得到了有向图 $G$ 有有向欧拉回路的充分必要条件：$G$ 是联通的且每个点的入度和出度相同。
+在书中，定理\ref{thm: Eulerian graph}采用了一种逐步扩展的方法，给出了一个构造性的证明，且得到了有向图 $G$ 有有向欧拉回路的充分必要条件：$G$ 是联通的且每个点的入度和出度相同。
+
+本节的 Example 1.2 中，作者提到了一个 \href{https://en.wikipedia.org/wiki/Instant\_Insanity}{Instant Insanity Puzzle}，该问题的解法将摆方块游戏与通过四个方块得到的无向图的两个无公共边（且边的编号也不相同）的 2-正则的子图联系了起来，通过相对面的颜色得到无向图的边的关系，通过边的标号刻画不同的方块，通过 2-正则的子图刻画得到的长方体的一对面，非常巧妙。
+
+本节的 Problem 1G 中，提到了一个定理：
+
+\begin{theorem}
+    一个顶点数大于等于 2 的有限简单图至少有两个点的度数相同。
+\end{theorem}
+
+\begin{proof}
+    1. 若有大于等于 $2$ 个点的度数为 $0$，那么结论成立。
+    
+    2. 若只有一个点的度数为 $0$，那么，其余 $n - 1$ 个点的度数均不能取$n - 1$，否则不为简单图，那么这 $n - 1$ 个节点的度数只能为 $1, 2, \dots, n - 2$ 其中之一，由抽屉原理，一定存在两个点的度数相同。
+
+    3. 若没有点的度数为 $0$，那么，这 $n$ 个点的度数只能为 $1, 2, \dots, n - 1$ 其中之一，由抽屉原理，一定存在两个点的度数相同。
+\end{proof}
+
+\section{树}
+
+在 \ref{sec: graph} 中，有一个结论：一个不包含简单闭合回路的连通图（也就是没有子图为多边形的图），是一个树，且我们进一步还有如下结论：
+
+\begin{theorem}
+    一个有 $n$ 个点的连通图是一个树，当且仅当该连通图有 $n - 1$ 条边。
+\end{theorem}
+
+\begin{proof}
+    一个有 $n$ 个点的联通图必然有 $\left| E \right| \geq n - 1$，另一方面，若该图的边数 $\left| E \right| \geq n$，那么该图一定存在为多边形的子图，此时该图不为树，因此 $\left| E \right| \leq n - 1$，综上两方面有树的边数为 $n - 1$。
+\end{proof}
+
+\newpage
 
 \nocite{*}
 \printbibliography[heading=bibintoc, title=\ebibname]
