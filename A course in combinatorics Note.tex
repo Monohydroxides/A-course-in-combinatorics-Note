@@ -1,0 +1,45 @@
+%!TEX program = xelatex
+\documentclass[cn,hazy,sakura,14pt,normal]{elegantnote}
+
+\title{A course in combinatorics\ 读书笔记}
+
+\author{Monohydroxides}
+
+\date{\zhtoday}
+
+\usepackage{array}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{图}
+
+本章主要对图的基本性质进行了介绍，如平面图、重边、自环、有向性、同构、完全图、正则图、生成子图、图的连通性、回路、多边形等。
+
+本章介绍了图的部分基本的性质。
+
+\begin{theorem} \label{thm: First theorem of graph theory}
+    任一有限图含有偶数个奇顶点。
+\end{theorem}
+
+\begin{proof}
+    图论中，所有点的度数之和为边数的两倍：
+    \begin{equation}
+    \sum_{x \in V(G)} \text{deg}(x) = 2 \left| E(G) \right|.
+    \end{equation}
+    由上式可以直接得到该定理的证明。
+\end{proof}
+
+\begin{theorem} \label{thm: Eulerian graph}
+    一个无孤立顶点的有限图 $G$ 是欧拉图，当且仅当 $G$ 是连通图且每一个点都是偶顶点。
+\end{theorem}
+
+在书中，定理\ref{thm: Eulerian graph}采用了一种类似于逐步扩展的方法，给出了一个构造性的证明，且得到了有向图 $G$ 有有向欧拉回路的充分必要条件：$G$ 是联通的且每个点的入度和出度相同。
+
+\nocite{*}
+\printbibliography[heading=bibintoc, title=\ebibname]
+
+\end{document}
